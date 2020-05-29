@@ -15,7 +15,6 @@
 	    	<h4 style="color:red;">
 	    		go to : 
 	    		<a href="homePage.jsp">home page</a>
-	    		 or <a href="logOut.jsp">log out</a>
 	    	</h4>
 	    </c:when>
 	    <c:otherwise>

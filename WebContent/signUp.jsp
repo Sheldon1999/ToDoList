@@ -8,6 +8,7 @@
 <title>Sign Up</title>
 </head>
 <body  style="text-align:center" >
+<!-- page where a user can register. -->
 	<c:choose>
 	    <c:when test="${not empty userEmail}">
 	    	<br>
@@ -15,7 +16,6 @@
 	    	<h4 style="color:red;">
 	    		go to : 
 	    		<a href="homePage.jsp">home page</a>
-	    		 or <a href="logOut.jsp">log out</a>
 	    	</h4>
 	    </c:when>    
 	    <c:otherwise>
@@ -39,7 +39,7 @@
 				<c:if test="${alreadyRegistered != null}">
 					<p style="color:red;">
 						User registered already,please 
-						<a href="logIn.jsp">home page</a>
+						<a href="logIn.jsp">log in</a>
 					</p>
 				</c:if>
 				<input type="submit" name="signedUp" value="sign up"/>

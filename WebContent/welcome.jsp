@@ -7,6 +7,7 @@
 <title>welcome</title>
 </head>
 <body style="text-align:center" >
+<!-- this is first page. -->
 	<br>
 	<h1> Welcome </h1>
 	<h1> To </h1>
@@ -14,16 +15,19 @@
 	<h4> web-utility </h4>
 	<h6> please login or register :</h6>
 	<div>
+		<!-- a login button to log in into the system -->
 		<form action="logIn.jsp" method="post">
 			<input style="border:2px solid black;" type="submit" value="log in" />
 		</form>
 		<br>
+		<!-- a sign up button to register into the system -->
 		<form action="signUp.jsp" method="post">
 			<input style="border:2px solid black;" type="submit" value="sign up"/>
 		</form>
 	</div>
 	<br>
 	<br>
+	<!-- some info about whole project -->
 	<h3> About us </h3>
 	<hr style="width:40%" >
 	<p> Author : Ankur Gangwar </p>

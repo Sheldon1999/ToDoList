@@ -73,15 +73,15 @@
 				<hr>
 				<table style="border:1px solid black;margin-left:auto;margin-right:auto;">
 					<tr>
-						<th>label</th>
-						<th>date</th>
-						<th>time</th>
+						<th style="padding:0 20px 0 20px;" >label</th>
+						<th style="padding:0 20px 0 20px;" >date</th>
+						<th style="padding:0 20px 0 20px;" >time</th>
 					</tr>
 					<c:forEach var="tempItem" items="${listItems}">
 						<tr>
-							<td>${tempItem.label}</td>
-							<td>${tempItem.date}</td>
-							<td>${tempItem.time}</td>
+							<td style="padding:0 20px 0 20px;" >${tempItem.label}</td>
+							<td style="padding:0 20px 0 20px;" >${tempItem.date}</td>
+							<td style="padding:0 20px 0 20px;" >${tempItem.time}</td>
 						</tr>
 					</c:forEach>
 				</table>
