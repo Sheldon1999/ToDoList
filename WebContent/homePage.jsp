@@ -8,23 +8,85 @@
 
 </head>
 
-<body>
-<!-- form to add items in list -->
-<!-- send value to addItem servlet using post method -->
-<form action="addItems" method="post">
-	Add item : <input type="text" name="theItem" placeholder="enter item here to add" size="50" />
-	<input type="submit" name="addTheItem" value="add item">
-</form>
-
-	<br>
-	<!-- listing items here -->
-	<h2>your Items : </h2>
-	<hr>
-	<ul>
-		<c:forEach var="tempItem" items="${listItems}">
-			<li>${tempItem}</li>
-		</c:forEach>
-	</ul>
+<body >
+	<c:choose>
+	    <c:when test="${empty userEmail}">
+	    	<br>
+	    	<br>
+	    	<h4 style="text-align:center;color:red;">
+	    		User is not logged in
+	    		<br>
+	    		please 
+	    		<a href="logIn.jsp">log in</a>
+	    		 to see the page requested.
+	    	</h4>
+	    </c:when>    
+	    <c:otherwise>
+	    	<%
+	    	
+		    	response.setHeader("Cache-Control", "no-cache");
+		    	response.setHeader("Cache-Control", "no-store");
+		    	response.setHeader("Pragma", "no-cache");
+		    	response.setDateHeader("Expires", 0);
+	    	
+				String uname = (String) session.getAttribute("userEmail");
+				request.setAttribute("userName", uname.charAt(0));
+			%>
+	    	<form style="float : right " action="logOut" method="post">
+				<input style="background-color:##D3D3D3;
+    border:2px solid black; border-radius: 50%;" type="submit" value="${userName}" title="${userEmail} &#013;&#010; click to log out"/>
+			</form>
+			<h1 style="text-align:center" > Enter task info </h1>
+			
+			<form  action="addItems" method="post">
+			<table style="margin-left:auto;margin-right:auto;">
+				<tr>
+					<td>item-label : </td>
+					<td>
+						<input type="text" name="ItemLabel" placeholder="enter label here to add" size="30" /> 
+					</td>
+				</tr>
+				<tr>
+					<td>item-date : </td>
+					<td>
+						<input type="date" name="ItemDate" />
+					</td>
+				</tr>
+				<tr>
+					<td>item-time : </td>
+					<td>
+						<input type="time" name="ItemTime" />
+					</td>
+				</tr>
+				<tr>
+				<td></td>
+				<td>
+					<input type="submit" name="addTheItem" value="add item">
+				</td>
+				</tr>
+			</table>
+			</form>
+			
+				<br>
+				<!-- listing items here -->
+				<h2>your Items : </h2>
+				<hr>
+				<table style="border:1px solid black;margin-left:auto;margin-right:auto;">
+					<tr>
+						<th>label</th>
+						<th>date</th>
+						<th>time</th>
+					</tr>
+					<c:forEach var="tempItem" items="${listItems}">
+						<tr>
+							<td>${tempItem.label}</td>
+							<td>${tempItem.date}</td>
+							<td>${tempItem.time}</td>
+						</tr>
+					</c:forEach>
+				</table>
+			</c:otherwise>
+		</c:choose>
 </body>
 
 </html>

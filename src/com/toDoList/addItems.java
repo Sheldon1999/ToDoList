@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class addItems
@@ -22,7 +23,7 @@ public class addItems extends HttpServlet {
      */
 	
 	// making an array list globally in servlet do that the items do not change when reload
-	ArrayList<String> items = new ArrayList<String>();
+	ArrayList<item> items = new ArrayList<item>();
 	
     public addItems() {
         super();
@@ -44,14 +45,25 @@ public class addItems extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		// get item form home.jsp
-		String item = request.getParameter("theItem");
+		String label = request.getParameter("ItemLabel");
 		
+		// get date from home.jsp
+		String date = request.getParameter("ItemDate");
+		
+		// get time from home.jsp
+		String time = request.getParameter("ItemTime");
+		
+		HttpSession session = request.getSession();
+		
+		String email = (String) session.getAttribute("userEmail");
+		
+		itemDbUtil dbUtil = new itemDbUtil();
 		//checking if there is no item
-		if(item != null && item.length() > 0)
-			items.add(item);
+		if(label.length() > 0 || date.length() > 0 || time.length() > 0)
+			dbUtil.addItem(new item(label, date, time), email);
 		
 		// making an html attribute
-		request.setAttribute("listItems", items);
+		request.setAttribute("listItems", dbUtil.getItems(email));
 		
 		// making a request dispatcher
 		RequestDispatcher dispatcher = request.getRequestDispatcher("homePage.jsp");
