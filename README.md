@@ -46,3 +46,15 @@ Follow the steps below to run project in your local machine:
 - **welcome page**
 
 ![welcomPage](https://github.com/Sheldon1999/ToDoList/blob/master/welcome.png)
+
+- **log in**
+
+user can log in in app but only after he has signed in before. Demo video can be found be [here](https://drive.google.com/file/d/1q4gP3BiGupv8xoGkV9W6M4_dVytMRKjx/view?usp=sharing).
+
+- **Sign up**
+
+user can sign-up into the system and add tasks to his list. Demo is [here](https://drive.google.com/file/d/199TxxodMJT3xm1KPUo2T6YtuR05MOi_E/view?usp=sharing).
+
+- **Additional**
+
+if user is already login than home page can be accessed directly. Demo is [here](https://drive.google.com/file/d/1dQeYRDZhI_SI65dpxobcwOpfU8QuFuu4/view?usp=sharing).
