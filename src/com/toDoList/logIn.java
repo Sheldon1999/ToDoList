@@ -1,6 +1,8 @@
 package com.toDoList;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -35,6 +37,8 @@ public class logIn extends HttpServlet {
 		boolean isError = false;
 		String error = null, dbResponse = null;
 		
+		itemDbUtil dbUtil = new itemDbUtil();
+		
 		if(email.length() == 0 || password.length() == 0){
 			if(email.length() == 0){
 				error = "email can not be null.";
@@ -53,7 +57,6 @@ public class logIn extends HttpServlet {
 			request.setAttribute("emailError", error);
 		}
 		else{
-			itemDbUtil dbUtil = new itemDbUtil();
 			dbResponse = dbUtil.checkCredentials(email, password);
 			
 			if(dbResponse.equals("not registered")){
@@ -76,6 +79,7 @@ public class logIn extends HttpServlet {
 		else if(dbResponse.equals("valid")){
 			HttpSession session = request.getSession();
 			session.setAttribute("userEmail",email);
+			
 			response.sendRedirect("homePage.jsp");
 		}
 	}

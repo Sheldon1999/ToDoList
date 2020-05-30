@@ -19,6 +19,7 @@
 		<form action="logIn.jsp" method="post">
 			<input style="border:2px solid black;" type="submit" value="log in" />
 		</form>
+		
 		<br>
 		<!-- a sign up button to register into the system -->
 		<form action="signUp.jsp" method="post">

@@ -1,5 +1,6 @@
 <!-- import jstl library -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="com.toDoList.item,com.toDoList.itemDbUtil,java.util.List, java.io.PrintWriter" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -71,6 +72,17 @@
 				<!-- listing items here -->
 				<h2>your Items : </h2>
 				<hr>
+				<%
+					
+					itemDbUtil dbUtil = new itemDbUtil();
+					
+					String email = (String)session.getAttribute("userEmail");
+					
+					List <item> listItems = dbUtil.getItems(email);
+					
+					request.setAttribute("listItems", listItems);
+				
+				%>
 				<table style="border:1px solid black;margin-left:auto;margin-right:auto;">
 					<tr>
 						<th style="padding:0 20px 0 20px;" >label</th>

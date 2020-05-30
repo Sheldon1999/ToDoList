@@ -144,6 +144,10 @@ public class itemDbUtil {
 				String date = rst.getString("date");
 				String time = rst.getString("time");
 				
+				System.out.println(label);
+				System.out.println(date);
+				System.out.println(time);
+				
 				item theItem = new item(id, label, date, time);
 				
 				items.add(theItem);
