@@ -45,4 +45,4 @@ Follow the steps below to run project in your local machine:
 
 - **welcome page**
 
-[welcomPage](https://github.com/Sheldon1999/ToDoList/blob/master/welcome.png)
+![welcomPage](https://github.com/Sheldon1999/ToDoList/blob/master/welcome.png)
