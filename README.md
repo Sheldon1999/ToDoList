@@ -25,7 +25,8 @@ It is a Java based web app developed on [**MVC Architecture**](https://en.wikipe
 2. make a database named "toDoDatabase".
 3. give all priveleges of this database to that user.
 4. make a table "user ( email varchar(40), password(40) )".
-**_Note:_**_you can also make a database name, username, and password of your choice but just edit database name(line-13), username(line-14), and password(line-15) in  it in [itemDbUtil](https://github.com/Sheldon1999/ToDoList/blob/master/src/com/toDoList/itemDbUtil.java). _
+
+**_Note:_**_you can also set database name, username, and password of your choice, just edit database name(line-13), username(line-14), and password(line-15) in [itemDbUtil](https://github.com/Sheldon1999/ToDoList/blob/master/src/com/toDoList/itemDbUtil.java)._
 
 ## Local setup
 
@@ -40,6 +41,8 @@ Follow the steps below to run project in your local machine:
 4. run tomcat.
 5. in browser run [http://localhost:8080/ToDoList/](http://localhost:8080/ToDoList/).
 
-## Demo gif
+## Demo
 
-![Demo gif]
+- **welcome page**
+
+[welcomPage]()
