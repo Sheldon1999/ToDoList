@@ -36,7 +36,7 @@ Follow the steps below to run project in your local machine:
 1. download and install MySQL.
 2. setup database schema as mentioned.
 3. download and install the [apache tomcat](https://tomcat.apache.org/download-80.cgi).
-4. download [web-student-tracker.war](https://github.com/Sheldon1999/web-student-tracker/blob/master/web-student-tracker.war)
+4. download [ToDoList.war](https://github.com/Sheldon1999/ToDoList/blob/master/ToDoList.war)
 3. put it inside webapps folder given in directory where tomcat is installed.
 4. run tomcat.
 5. in browser run [http://localhost:8080/ToDoList/](http://localhost:8080/ToDoList/).
