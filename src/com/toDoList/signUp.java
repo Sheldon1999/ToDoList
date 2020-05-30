@@ -39,12 +39,12 @@ public class signUp extends HttpServlet {
 		boolean isError = false;
 		String error = null;
 		
-		if(password.length() == 0){
+		if(password.length() == 0 || password == null){
 			error = "password can not be null";
 			request.setAttribute("passwordError",error);
 			isError = true;
 		}
-		else if(confirmPass.length() == 0){
+		else if(confirmPass.length() == 0 || confirmPass == null){
 			error = "confirm password can not be null";
 			request.setAttribute("passwordError",error);
 			isError = true;
@@ -54,7 +54,7 @@ public class signUp extends HttpServlet {
 			request.setAttribute("passwordError",error);
 			isError = true;
 		}
-		if(email.length() == 0){
+		if(email.length() == 0 || email == null){
 			error = "email can not be null";
 			request.setAttribute("emailError",error);
 			isError = true;
@@ -64,15 +64,16 @@ public class signUp extends HttpServlet {
 			request.setAttribute("emailError",error);
 			isError = true;
 		}
-		
-		itemDbUtil dbUtil = new itemDbUtil();
-		
-		String userAdded = dbUtil.addUser(email, password);
-		
-		if(userAdded.equals("already registered")){
-			error = "email already registered";
-			request.setAttribute("alreadyRegistered",error);
-			isError = true;
+		if(!isError){
+			itemDbUtil dbUtil = new itemDbUtil();
+			
+			String userAdded = dbUtil.addUser(email, password);
+			
+			if(userAdded.equals("already registered")){
+				error = "email already registered";
+				request.setAttribute("alreadyRegistered",error);
+				isError = true;
+			}
 		}
 		
 		if(isError){

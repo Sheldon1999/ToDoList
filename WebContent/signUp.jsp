@@ -36,7 +36,7 @@
 				<br>
 				<p style="color:red;">${emailError}</p>
 				<p style="color:red;">${passwordError}</p>
-				<c:if test="${alreadyRegistered != null}">
+				<c:if test="${not empty alreadyRegistered}">
 					<p style="color:red;">
 						User registered already,please 
 						<a href="logIn.jsp">log in</a>
