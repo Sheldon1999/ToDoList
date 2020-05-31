@@ -2,7 +2,7 @@
 
 ## Overview
 
-It is a Java based web app developed on [**MVC Architecture**](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller). In this app main focus is on **user authentication**(and also basic security). Theme is a basic ToDOList, Hence a user can add some daily tasks with date and time. To run above project just follow the steps given in [Local setup](#local-setup).
+It is a Java based web app developed on [**MVC Architecture**](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller). In this app main focus is on **user authentication**(and also basic security). Theme is a basic ToDOList, Hence a user can add some daily tasks with date and time. To run above project just follow the steps given in [Local setup](#local-setup). A demo of the project is [here](#demo).
 
 ## Technologies used
 
